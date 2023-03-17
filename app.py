@@ -13,6 +13,10 @@ from linebot.models import (
 from flask import Flask, request, abort
 from secret import MAMORU_CHANNEL_ACCESS_TOKEN,MAMORU_CHANNEL_SECRET
 
+#OpenAI
+from openAI import message_return
+
+
 app = Flask(__name__)
 
 
@@ -47,10 +51,12 @@ def handle_message(event):
     # メッセージを受け取る
     text=event.message.text()
 
+    message = message_return(text)
+
     #メッセージ送信
     line_bot_api.reply_message(
     event.reply_token,
-    TextSendMessage(text))   
+    TextSendMessage(message))  
 
 if __name__ == "__main__":
     #デフォルト
