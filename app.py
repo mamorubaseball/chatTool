@@ -53,9 +53,11 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     # メッセージを受け取る
-    text=event.message.text()
+    text=event.message.text
+    print("入力されたテキスト",text)
 
     message = message_return(text)
+    print("出力メッセージ",message)
 
     #メッセージ送信
     line_bot_api.reply_message(
