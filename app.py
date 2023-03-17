@@ -11,7 +11,11 @@ from linebot.models import (
 
 #Flask
 from flask import Flask, request, abort
-from secret import MAMORU_CHANNEL_ACCESS_TOKEN,MAMORU_CHANNEL_SECRET
+import os
+# from secret import MAMORU_CHANNEL_ACCESS_TOKEN,MAMORU_CHANNEL_SECRET
+
+MAMORU_CHANNEL_ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
+MAMORU_CHANNEL_SECRET = os.environ.get('CHANNEL_SECRET')
 
 #OpenAI
 from openAI import message_return

@@ -1,7 +1,9 @@
 import openai
-from secret import OPEN_AI
+# from secret import OPEN_AI
+import os
 
-openai.api_key =  OPEN_AI
+openai.api_key = os.environ.get('OPEN_AI')
+
 
 def message_return(text):
     response = openai.ChatCompletion.create(
