@@ -63,8 +63,8 @@ def handle_message(event):
     TextSendMessage(message))  
 
 if __name__ == "__main__":
-    #デフォルト
-    # app.run(debug=False, host='0.0.0.0', port=80)
+    # prod環境
+    app.run(debug=False, host='0.0.0.0', port=80)
 
     # dev環境
-    app.run(debug=True,host='0.0.0.0', port=8080)
+    # app.run(debug=True,host='0.0.0.0', port=8080)

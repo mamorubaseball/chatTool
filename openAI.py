@@ -9,7 +9,7 @@ def message_return(text):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "user", "content": "大谷翔平について教えて"},
+            {"role": "user", "content": text},
         ],
     )
     return response.choices[0]["message"]["content"].strip()
